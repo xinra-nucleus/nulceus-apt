@@ -10,7 +10,7 @@ import javax.lang.model.element.Element;
 import javax.tools.Diagnostic;
 
 /**
- * Base class for annotation Processors
+ * Base class for annotation Processors.
  * 
  * @author Erik Hofer
  */
