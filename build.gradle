@@ -39,7 +39,7 @@ publish {
     groupId = 'com.xinra.nucleus'
     artifactId = 'nucleus-apt'
     publishVersion = '0.1.1'
-    licences = ['MIT']
+    licences = ['BSD 3-Clause']
     desc = 'Library for creating annotation processors '
     website = 'https://github.com/xinra-nucleus/nucleus-apt'
 }
