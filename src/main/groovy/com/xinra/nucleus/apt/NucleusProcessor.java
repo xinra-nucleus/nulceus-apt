@@ -1,10 +1,10 @@
 package com.xinra.nucleus.apt;
 
+import com.google.auto.common.BasicAnnotationProcessor;
 import com.squareup.javapoet.AnnotationSpec;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.annotation.Generated;
-import javax.annotation.processing.AbstractProcessor;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.tools.Diagnostic;
@@ -14,7 +14,7 @@ import javax.tools.Diagnostic;
  * 
  * @author Erik Hofer
  */
-public abstract class NucleusProcessor extends AbstractProcessor {
+public abstract class NucleusProcessor extends BasicAnnotationProcessor {
   
   /**
    * Emits an error message (will be displayed in the IDE).
@@ -47,7 +47,7 @@ public abstract class NucleusProcessor extends AbstractProcessor {
     AnnotationSpec.Builder builder = AnnotationSpec.builder(Generated.class)
         .addMember("value", "$S", this.getClass().getName())
         .addMember("date", "$S", ZonedDateTime.now().format(DateTimeFormatter.ISO_INSTANT));
-    if(comments != null) {
+    if (comments != null) {
       builder.addMember("comments", "$S", comments);
     }
     return builder.build();
